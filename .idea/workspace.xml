@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7ac25b6-265d-43ed-8230-0c6749f7127e" name="Changes" comment="New commit with added getNextToken() code">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/CSC.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/CSC.lex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/File.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/File.lex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/prime.lex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LexerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a7ac25b6-265d-43ed-8230-0c6749f7127e" name="Changes" comment="passed all test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hello.lex" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hello.lex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LexerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LexerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,29 +61,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.Rojee_Mini-Compiler [:Lexer.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Rojee_Mini-Compiler [:Parser.main()].executor&quot;: &quot;Run&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/elloyd/Desktop/NSC/Courses/Spring Courses/Programming Languages/Projects/MiniCompilerProject/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.Build Rojee_Mini-Compiler.executor": "Run",
+    "Gradle.Rojee_Mini-Compiler [:Lexer.main()].executor": "Run",
+    "Gradle.Rojee_Mini-Compiler [:Parser.main()].executor": "Run",
+    "JUnit.LexerTest.executor": "Run",
+    "JUnit.LexerTest.stringTest.executor": "Run",
+    "JUnit.LexerTest.stringtest.executor": "Run",
+    "JUnit.LexerTest.testCommentToken.executor": "Run",
+    "JUnit.LexerTest.testDivideToken.executor": "Run",
+    "JUnit.LexerTest.testIntegerToken.executor": "Run",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/elloyd/Desktop/NSC/Courses/Spring Courses/Programming Languages/Projects/MiniCompilerProject/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -107,25 +105,63 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Lexer">
-    <configuration name="Lexer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lexer" />
-      <module name="MiniCompiler.main" />
+  <component name="RunManager">
+    <configuration name="LexerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MiniCompiler.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LexerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Parser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Parser" />
-      <module name="MiniCompiler.main" />
+    <configuration name="LexerTest.stringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MiniCompiler.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LexerTest" />
+      <option name="METHOD_NAME" value="stringTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LexerTest.testCommentToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MiniCompiler.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LexerTest" />
+      <option name="METHOD_NAME" value="testCommentToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LexerTest.testDivideToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MiniCompiler.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LexerTest" />
+      <option name="METHOD_NAME" value="testDivideToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LexerTest.testIntegerToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MiniCompiler.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LexerTest" />
+      <option name="METHOD_NAME" value="testIntegerToken" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Parser" />
-        <item itemvalue="Application.Lexer" />
+        <item itemvalue="JUnit.LexerTest" />
+        <item itemvalue="JUnit.LexerTest.testDivideToken" />
+        <item itemvalue="JUnit.LexerTest.testIntegerToken" />
+        <item itemvalue="JUnit.LexerTest.testCommentToken" />
+        <item itemvalue="JUnit.LexerTest.stringTest" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +196,7 @@
       <workItem from="1714919921881" duration="25914000" />
       <workItem from="1715016550156" duration="4591000" />
       <workItem from="1715022069248" duration="272000" />
-      <workItem from="1715022385912" duration="10739000" />
+      <workItem from="1715022385912" duration="14671000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, incomplete solution">
       <created>1678238319702</created>
@@ -176,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1682631009218</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="passed all test">
+      <option name="closed" value="true" />
+      <created>1715034747937</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715034747937</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +241,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit, incomplete solution" />
     <MESSAGE value="New commit with added getNextToken() code" />
-    <option name="LAST_COMMIT_MESSAGE" value="New commit with added getNextToken() code" />
+    <MESSAGE value="passed all test" />
+    <option name="LAST_COMMIT_MESSAGE" value="passed all test" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -209,5 +254,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MiniCompiler$LexerTest.ic" NAME="LexerTest Coverage Results" MODIFIED="1715049767631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

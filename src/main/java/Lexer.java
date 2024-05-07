@@ -242,9 +242,9 @@ public class Lexer {
 
     /**
      * get ASCII value
-     * @param line
-     * @param pos
-     * @return Integer
+     * @param line The line number where the ASCII value is located.
+     * @param pos The position within the line where the ASCII value starts.
+     * @return Integer A token representing the ASCII value as an integer.
      */
     Token getASCII(int line, int pos){
         char current = chr;
@@ -419,7 +419,7 @@ public class Lexer {
 
     static void outputToFile(String result) {
         try {
-            FileWriter myWriter = new FileWriter("src/main/resources/File.lex");
+            FileWriter myWriter = new FileWriter("src/main/resources/count.lex");
             myWriter.write(result);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
@@ -432,7 +432,7 @@ public class Lexer {
         if (1==1) {
             try {
 
-                File f = new File("src/main/resources/File.c");
+                File f = new File("src/main/resources/count.c");
                 Scanner s = new Scanner(f);
                 String source = " ";
                 String result = " ";

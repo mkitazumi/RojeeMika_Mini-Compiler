@@ -1,7 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.List;
@@ -10,7 +7,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 class Parser {
-    private List<Token> source;
+    private final List<Token> source;
     private Token token;
     private int position;
 
@@ -19,24 +16,39 @@ class Parser {
         public Node left, right;
         public String value;
 
+        //i think this is what im supposed to do
+        //its just annoying when they are highlighted
+        public boolean right_assoc;
+        public boolean is_unary;
+
         Node() {
             this.nt = null;
             this.left = null;
             this.right = null;
             this.value = null;
+            //added
+            this.right_assoc = false;
+            this.is_unary = false;
         }
+
         Node(NodeType node_type, Node left, Node right, String value) {
             this.nt = node_type;
             this.left = left;
             this.right = right;
             this.value = value;
+            //added
+            this.right_assoc = false;
+            this.is_unary = false;
         }
+
         public static Node make_node(NodeType nodetype, Node left, Node right) {
             return new Node(nodetype, left, right, "");
         }
+
         public static Node make_node(NodeType nodetype, Node left) {
             return new Node(nodetype, left, null, "");
         }
+
         public static Node make_leaf(NodeType nodetype, String value) {
             return new Node(nodetype, null, null, value);
         }
@@ -49,8 +61,12 @@ class Parser {
         public int pos;
 
         Token(TokenType token, String value, int line, int pos) {
-            this.tokentype = token; this.value = value; this.line = line; this.pos = pos;
+            this.tokentype = token;
+            this.value = value;
+            this.line = line;
+            this.pos = pos;
         }
+
         @Override
         public String toString() {
             return String.format("%5d  %5d %-15s %s", this.line, this.pos, this.tokentype, this.value);
@@ -103,14 +119,31 @@ class Parser {
             this.precedence = precedence;
             this.node_type = node;
         }
-        boolean isRightAssoc() { return this.right_assoc; }
-        boolean isBinary() { return this.is_binary; }
-        boolean isUnary() { return this.is_unary; }
-        int getPrecedence() { return this.precedence; }
-        NodeType getNodeType() { return this.node_type; }
 
-        public NodeType getOperatorNodeType() {return this.getOperatorNodeType();}
+        boolean isRightAssoc() {
+            return this.right_assoc;
+        }
+
+        boolean isBinary() {
+            return this.is_binary;
+        }
+
+        boolean isUnary() {
+            return this.is_unary;
+        }
+
+        int getPrecedence() {
+            return this.precedence;
+        }
+
+        NodeType getNodeType() {
+            return this.node_type;
+        }
+
     }
+
+
+
     static enum NodeType {
         nd_None(""), nd_Ident("Identifier"), nd_String("String"), nd_Integer("Integer"), nd_Sequence("Sequence"), nd_If("If"),
         nd_Prtc("Prtc"), nd_Prts("Prts"), nd_Prti("Prti"), nd_While("While"),
@@ -125,8 +158,11 @@ class Parser {
         }
 
         @Override
-        public String toString() { return this.name; }
+        public String toString() {
+            return this.name;
+        }
     }
+
     static void error(int line, int pos, String msg) {
         if (line > 0 && pos > 0) {
             System.out.printf("%s in line %d, pos %d\n", msg, line, pos);
@@ -135,19 +171,22 @@ class Parser {
         }
         System.exit(1);
     }
+
     Parser(List<Token> source) {
         this.source = source;
         this.token = null;
         this.position = 0;
     }
+
     Token getNextToken() {
         this.token = this.source.get(this.position++);
         return this.token;
     }
+
     Node expr(int p) {//------------------------------------------------------------------------------------------------------
         // create nodes for token types such as LeftParen, Op_add, Op_subtract, etc.
         // be very careful here and be aware of the precendence rules for the AST tree
-        Node result = null, node; //exist before
+        Node result = null, node;
         Node left;
         TokenType op;
         int q;
@@ -168,18 +207,20 @@ class Parser {
                 }
                 this.token = getNextToken();
                 q = op.getPrecedence();
-                result = Node.make_node(op.getOperatorNodeType(), left, expr(q));
+                result = Node.make_node(op.getNodeType(), left, expr(q));
             }
         }
 
-        return result; //exist before
+        return result;
     }
+
     Node paren_expr() {
         expect("paren_expr", TokenType.LeftParen);
         Node node = expr(0);
         expect("paren_expr", TokenType.RightParen);
         return node;
     }
+
     void expect(String msg, TokenType s) {
         if (this.token.tokentype == s) {
             getNextToken();
@@ -187,6 +228,7 @@ class Parser {
         }
         error(this.token.line, this.token.pos, msg + ": Expecting '" + s + "', found: '" + this.token.tokentype + "'");
     }
+
     Node stmt() {//----------------------------------------------------------------------------------------------------
         // this one handles TokenTypes such as Keyword_if, Keyword_else, nd_If, Keyword_print, etc.
         // also handles while, end of file, braces
@@ -242,6 +284,7 @@ class Parser {
 
         return t;//existed before
     }
+
     Node parse() {
         Node t = null;
         getNextToken();
@@ -250,6 +293,7 @@ class Parser {
         }
         return t;
     }
+
     String printAST(Node t, StringBuilder sb) {
         int i = 0;
         if (t == null) {
@@ -276,7 +320,7 @@ class Parser {
 
     static void outputToFile(String result) {
         try {
-            FileWriter myWriter = new FileWriter("src/main/resources/hello.par");
+            FileWriter myWriter = new FileWriter("src/main/resources/hello.lex");
             myWriter.write(result);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
@@ -287,7 +331,7 @@ class Parser {
 
 
     public static void main(String[] args) {
-        if (1==1) {
+        if (1 == 1) {
             try {
                 String value, token;
                 String result = " ";
@@ -332,7 +376,6 @@ class Parser {
                 str_to_tokens.put("Integer", TokenType.Integer);
                 str_to_tokens.put("String", TokenType.String);
 
-
                 Scanner s = new Scanner(new File("src/main/resources/hello.lex"));
                 String source = " ";
                 while (s.hasNext()) {
@@ -357,13 +400,12 @@ class Parser {
                 Parser p = new Parser(list);
                 result = p.printAST(p.parse(), sb);
                 outputToFile(result);
-            } catch (FileNotFoundException e) {
-                error(-1, -1, "Exception: " + e.getMessage());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             } catch (Exception e) {
-                error(-1, -1, "Exception: " + e.getMessage());
+                throw new RuntimeException(e);
             }
-        } else {
-            error(-1, -1, "No args");
         }
     }
 }
+
